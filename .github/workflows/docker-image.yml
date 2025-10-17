@@ -26,15 +26,15 @@ jobs:
       - name: Build and push backend image
         uses: docker/build-push-action@v5
         with:
-          context: ./BackEnd/travel-bucketlist-backend
-          file: ./BackEnd/travel-bucketlist-backend/backend.Dockerfile
+          context: ./DEVOPS-FULLSTACK-PROJECT/springbootbackend
+          file: ./DEVOPS-FULLSTACK-PROJECT/springbootbackend/backend.Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/eb:latest
 
       - name: Build and push frontend image
         uses: docker/build-push-action@v5
         with:
-          context: ./FrontEnd/travel-bucketlist
-          file: ./FrontEnd/travel-bucketlist/frontend.Dockerfile
+          context: ./DEVOPS-FULLSTACK-PROJECT/reactfrontend
+          file: ./DEVOPS-FULLSTACK-PROJECT/reactfrontend/frontend.Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/ee:latest
